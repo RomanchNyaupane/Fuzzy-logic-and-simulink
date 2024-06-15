@@ -50,7 +50,7 @@ void loop() {
   err = ref-feedback_temp;
   pid_controller(feedback_temp,err,deltaT);
 }
-float pid_controller(float feedback_temp,float err, float deltaT){
+void pid_controller(float feedback_temp,float err, float deltaT){
   pid_kp = kp*err;
   pid_ki = ki*( pid_ki+err*deltaT);
   pid_kd = kd*(err-prev_err)/deltaT;
